@@ -32,7 +32,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
         try:
             # Menyambungkan Kunci AI
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-pro')
             
             # Buku Panduan (Prompt)
             prompt = f"""
