@@ -64,10 +64,11 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             1. KONTEKS KOSP: Jika ada dokumen KOSP yang dilampirkan, pelajari visi, misi, dan karakteristik sekolah tersebut. Jadikan informasi dari KOSP sebagai dasar penentuan 'Kemitraan Pembelajaran', 'Lingkungan Pembelajaran', dan rancang 'Pengalaman Belajar' agar modul ini sangat kontekstual dengan sekolah tersebut.
             2. MEDIA VIDEO: Pada bagian Pemanfaatan Digital, jika kamu merekomendasikan video, WAJIB tampilkan langsung link URL pencarian cerdas YouTube secara mentah (raw link). 
                Contoh format: https://www.youtube.com/results?search_query=kata+kunci+materi+spesifik
-            3. MEDIA GAMBAR/POSTER: JANGAN menampilkan gambar secara otomatis. Pada bagian Pemanfaatan Digital, cukup berikan rekomendasi berupa deskripsi teks dan sertakan link URL mentah (raw link) ke layanan Pollinations agar pengguna bisa mengekliknya sendiri. Gunakan URL bahasa Inggris yang memerintahkan ilustrasi tanpa teks.
+            3. MEDIA GAMBAR/POSTER: JANGAN menampilkan gambar secara otomatis. Pada bagian Pemanfaatan Digital, cukup berikan rekomendasi berupa deskripsi teks dan sertakan link pencarian cerdas ke Google Images dan Pinterest secara mentah (raw link) agar guru bisa memilih gambar referensi yang paling valid.
                Contoh format penyajiannya:
-               - Rekomendasi Gambar: Ilustrasi anatomi sistem pencernaan manusia.
-               - Link Gambar: https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+anatomy+without+any+text+or+labels+clear+vector+flat+design+for+kids?width=800&height=600&nologo=true
+               - Rekomendasi Gambar: Poster anatomi sistem pencernaan manusia.
+               - Cari Gambar di Google: https://www.google.com/search?tbm=isch&q=poster+anatomi+sistem+pencernaan+manusia
+               - Cari Gambar di Pinterest: https://id.pinterest.com/search/pins/?q=poster+anatomi+sistem+pencernaan+manusia
             
             ATURAN MUTLAK FORMAT:
             Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah judul bagian. Gunakan Markdown agar rapi (termasuk tabel untuk rubrik).
@@ -105,7 +106,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             * **Praktik Pedagogis:** [Sebutkan Model dan Metode yang digunakan]
             * **Kemitraan Pembelajaran:** [Sebutkan kemitraan Internal dan Eksternal]
             * **Lingkungan Pembelajaran:** [Jelaskan Budaya Belajar dan Ruang Fisik]
-            * **Pemanfaatan Digital:** [Sebutkan teknologi/alat bantu. WAJIB tampilkan LINK YOUTUBE pencarian cerdas secara mentah DAN deskripsi beserta LINK GAMBAR pollinations.ai secara mentah sesuai aturan!]
+            * **Pemanfaatan Digital:** [Sebutkan teknologi/alat bantu. WAJIB tampilkan LINK YOUTUBE pencarian cerdas secara mentah DAN link pencarian GOOGLE IMAGES serta PINTEREST secara mentah sesuai aturan!]
 
             ## PENGALAMAN BELAJAR
             **AWAL (Bermakna, Menggembirakan)**
