@@ -2,6 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 import tempfile
 import os
+import markdown # Ini adalah mesin penerjemah ke Word
 
 # 1. Mengatur Wajah Website
 st.set_page_config(page_title="Tulung AI", page_icon="🤖")
@@ -54,7 +55,6 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
                     finally:
                         os.remove(tmp_path)
             
-            # Buku Panduan (Prompt) Final Super Canggih
             prompt = f"""
             Kamu adalah Pakar Perancang Pembelajaran Mendalam tingkat nasional. 
             Tugasmu menyusun Modul Ajar untuk jenjang {jenjang} kelas {kelas} dengan mata pelajaran {mapel}.
@@ -90,37 +90,37 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             **ALOKASI WAKTU** : [Isi waktu yang logis]
 
             ## IDENTIFIKASI
-            *   **Peserta Didik:** [Buat analisis ringkas tahap perkembangan siswa kelas {kelas}]
-            *   **Materi Pelajaran:** [Buat fokus materi pelajaran]
-            *   **Dimensi Profil Lulusan (DPL):** [Tuliskan dan tebalkan 2-4 DPL yang dipilih dari daftar di atas]
+            * **Peserta Didik:** [Buat analisis ringkas tahap perkembangan siswa kelas {kelas}]
+            * **Materi Pelajaran:** [Buat fokus materi pelajaran]
+            * **Dimensi Profil Lulusan (DPL):** [Tuliskan dan tebalkan 2-4 DPL yang dipilih dari daftar di atas]
 
             ## DESAIN PEMBELAJARAN
-            *   **Capaian Pembelajaran:** [Buat capaian yang sesuai materi]
-            *   **Lintas Disiplin Ilmu:** [Sebutkan 1 atau 2 mapel lain yang terkait dan alasannya]
-            *   **Tujuan Pembelajaran:** {tujuan}
-            *   **Topik Pembelajaran:** [Topik utama]
-            *   **Praktik Pedagogis:** [Sebutkan Model dan Metode yang digunakan]
-            *   **Kemitraan Pembelajaran:** [Sebutkan kemitraan Internal dan Eksternal]
-            *   **Lingkungan Pembelajaran:** [Jelaskan Budaya Belajar dan Ruang Fisik]
-            *   **Pemanfaatan Digital:** [Sebutkan teknologi/alat bantu. WAJIB sertakan LINK YOUTUBE pencarian cerdas DAN buatkan GAMBAR/POSTER otomatis menggunakan link pollinations.ai sesuai aturan!]
+            * **Capaian Pembelajaran:** [Buat capaian yang sesuai materi]
+            * **Lintas Disiplin Ilmu:** [Sebutkan 1 atau 2 mapel lain yang terkait dan alasannya]
+            * **Tujuan Pembelajaran:** {tujuan}
+            * **Topik Pembelajaran:** [Topik utama]
+            * **Praktik Pedagogis:** [Sebutkan Model dan Metode yang digunakan]
+            * **Kemitraan Pembelajaran:** [Sebutkan kemitraan Internal dan Eksternal]
+            * **Lingkungan Pembelajaran:** [Jelaskan Budaya Belajar dan Ruang Fisik]
+            * **Pemanfaatan Digital:** [Sebutkan teknologi/alat bantu. WAJIB sertakan LINK YOUTUBE pencarian cerdas DAN buatkan GAMBAR/POSTER otomatis menggunakan link pollinations.ai sesuai aturan!]
 
             ## PENGALAMAN BELAJAR
             **AWAL (Bermakna, Menggembirakan)**
-            *   [Tuliskan aktivitas Orientasi, Apersepsi, dan Motivasi]
+            * [Tuliskan aktivitas Orientasi, Apersepsi, dan Motivasi]
 
             **INTI Memahami (Bermakna, Berkesadaran)**
-            *   [Tuliskan Penjelasan Terbimbing dan Aktivitas utama siswa]
+            * [Tuliskan Penjelasan Terbimbing dan Aktivitas utama siswa]
 
             **Merefleksi (Bermakna dan berkesadaran)**
-            *   [Tuliskan aktivitas Presentasi/Tanggapan hasil belajar]
+            * [Tuliskan aktivitas Presentasi/Tanggapan hasil belajar]
 
             **PENUTUP (Bermakna, Berkesadaran)**
-            *   [Tuliskan Kesimpulan, Refleksi, dan Tindak Lanjut]
+            * [Tuliskan Kesimpulan, Refleksi, dan Tindak Lanjut]
 
             ## ASESMEN PEMBELAJARAN
-            *   **Asesmen pada Awal Pembelajaran:** [Teknik dan Instrumen]
-            *   **Asesmen pada Proses Pembelajaran:** [Teknik dan Instrumen]
-            *   **Asesmen pada Akhir Pembelajaran:** [Teknik dan Instrumen]
+            * **Asesmen pada Awal Pembelajaran:** [Teknik dan Instrumen]
+            * **Asesmen pada Proses Pembelajaran:** [Teknik dan Instrumen]
+            * **Asesmen pada Akhir Pembelajaran:** [Teknik dan Instrumen]
 
             ## RUBRIK PENILAIAN
             [Buat tabel Rubrik Penilaian dengan kolom: Indikator, Baru Memulai, Berkembang, Cakap, Mahir]
@@ -132,16 +132,19 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
-                # Menampilkan modul di layar
-                st.write(response.text)
+                # Menampilkan modul di layar (Pasti Rapi)
+                st.markdown(response.text)
                 
-                # FITUR BARU: Tombol Download File
+                # FITUR BARU: Menerjemahkan ke format MS Word (.doc)
+                html_text = markdown.markdown(response.text, extensions=['tables'])
+                word_file = f"<html><head><meta charset='utf-8'></head><body>{html_text}</body></html>"
+                
                 st.markdown("──────────────────────────────")
                 st.download_button(
-                    label="📥 DOWNLOAD MODUL INI (Bisa dibuka di Word/Notepad)",
-                    data=response.text,
-                    file_name=f"Modul_Ajar_{mapel}_Kelas_{kelas}.md",
-                    mime="text/markdown"
+                    label="📥 DOWNLOAD MODUL KE WORD (Pasti Rapi!)",
+                    data=word_file,
+                    file_name=f"Modul_Ajar_{mapel}_Kelas_{kelas}.doc",
+                    mime="application/msword"
                 )
                 
         except Exception as e:
