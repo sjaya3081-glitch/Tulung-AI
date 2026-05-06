@@ -61,8 +61,9 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             Tujuan pembelajaran: {tujuan}.
             
             ATURAN KHUSUS MEDIA (SANGAT PENTING - BACA DENGAN TELITI):
-            1. DILARANG KERAS menggunakan format link markdown yang disembunyikan di balik teks seperti [Tonton Video](URL).
-            2. Kamu WAJIB menaruh link/URL secara utuh dan mentah di dalam tanda kutip tunggal terbalik (backticks) agar sistem menguncinya sebagai teks murni yang bisa di-copy paste.
+            1. DILARANG KERAS memunculkan atau merender gambar secara langsung (DILARANG menggunakan kode ![gambar](url)).
+            2. Kamu HANYA BOLEH memberikan URL/Link mentahnya saja untuk video dan gambar.
+            3. Taruh link tersebut di dalam tanda kutip tunggal terbalik (backticks) agar sistem menguncinya sebagai teks murni yang bisa di-copy paste guru.
             
             ATURAN MUTLAK FORMAT:
             Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah struktur.
@@ -101,10 +102,8 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             * **Lingkungan Pembelajaran:** [Budaya dan Ruang]
             * **Pemanfaatan Digital:** 
               - Alat bantu: [Sebutkan teknologi]
-              - Video Referensi: `https://www.youtube.com/results?search_query=[ganti_dengan_kata_kunci_materi_spesifik]`
-              - Gambar Referensi (Otomatis):
-                ![Ilustrasi Pembelajaran](https://image.pollinations.ai/prompt/[ganti_dengan_kata_kunci_spesifik_berbahasa_inggris_tanpa_teks_tambahan]?width=800&height=600&nologo=true)
-              - Link Gambar Mentah: `https://image.pollinations.ai/prompt/[ganti_dengan_kata_kunci_spesifik_berbahasa_inggris_tanpa_teks_tambahan]?width=800&height=600&nologo=true`
+              - Link Referensi Video: `https://www.youtube.com/results?search_query=[ganti_dengan_kata_kunci_materi_spesifik]`
+              - Link Referensi Gambar: `https://image.pollinations.ai/prompt/[ganti_dengan_kata_kunci_spesifik_berbahasa_inggris_tanpa_teks_tambahan]?width=800&height=600&nologo=true`
 
             ## PENGALAMAN BELAJAR
             **AWAL (Bermakna, Menggembirakan)**
@@ -130,7 +129,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             
             isi_pesan.append(prompt)
             
-            with st.spinner('Tulung AI sedang merakit modul, memaksa link mentah, dan melukis ilustrasi untuk Anda...'):
+            with st.spinner('Tulung AI sedang merakit modul dan menyiapkan link murni untuk Anda...'):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
