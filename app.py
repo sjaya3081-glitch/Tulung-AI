@@ -60,27 +60,28 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             Tugasmu menyusun Modul Ajar untuk jenjang {jenjang} kelas {kelas} dengan mata pelajaran {mapel}.
             Tujuan pembelajaran: {tujuan}.
             
-            ATURAN KHUSUS KOSP & MEDIA:
+            ATURAN KHUSUS KOSP & MEDIA (SANGAT PENTING):
             1. KONTEKS KOSP: Jika ada dokumen KOSP yang dilampirkan, pelajari visi, misi, dan karakteristik sekolah tersebut. Jadikan informasi dari KOSP sebagai dasar penentuan 'Kemitraan Pembelajaran', 'Lingkungan Pembelajaran', dan rancang 'Pengalaman Belajar' agar modul ini sangat kontekstual dengan sekolah tersebut.
-            2. MEDIA VIDEO: JANGAN menampilkan video, cukup berikan link. Pada bagian Pemanfaatan Digital, WAJIB sertakan link pencarian YouTube dengan format: 
-               * [Tonton Referensi Video di YouTube](https://www.youtube.com/results?search_query=kata+kunci+materi+spesifik)
-            3. MEDIA GAMBAR/POSTER: JANGAN PERNAH men-generate atau menampilkan gambar secara langsung. Sebagai gantinya, berikan link pencarian cerdas menuju Google Images dan Pinterest agar guru bisa memilih gambar sendiri. Gunakan format persis seperti ini (tanpa tanda seru di awal):
-               * [Cari Referensi Gambar di Google](https://www.google.com/search?tbm=isch&q=poster+edukasi+kata+kunci+materi)
-               * [Cari Ide Visual di Pinterest](https://id.pinterest.com/search/pins/?q=poster+edukasi+kata+kunci+materi)
+            2. MEDIA VIDEO: JANGAN menyembunyikan link di balik teks (jangan gunakan format [Teks](URL)). Tuliskan URL mentahnya secara langsung agar bisa di-copy paste guru. 
+               Format wajib: https://www.youtube.com/results?search_query=kata+kunci+materi+spesifik
+            3. MEDIA GAMBAR/POSTER: Buatkan ilustrasi pendidikan otomatis yang bersih TANPA TEKS. Tampilkan gambarnya, DAN sertakan juga URL mentahnya di bawahnya agar guru bisa mengunduhnya secara terpisah.
+               Contoh penulisan yang wajib diikuti:
+               ![Ilustrasi](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+without+any+text+or+labels+clear+vector+flat+design?width=800&height=600&nologo=true)
+               Link Gambar: https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+without+any+text+or+labels+clear+vector+flat+design?width=800&height=600&nologo=true
             
             ATURAN MUTLAK FORMAT:
             Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah judul bagian. Gunakan Markdown agar rapi (termasuk tabel untuk rubrik).
             Pilih dan tebalkan (bold) 8 Dimensi Profil Lulusan yang paling relevan pada bagian 'IDENTIFIKASI'.
 
             DAFTAR 8 DIMENSI PROFIL LULUSAN:
-            1. Keimanan dan Ketakwaan Terhadap Tuhan Yang Maha Esa: Memiliki landasan iman yang kuat, akhlak mulia, dan nilai spiritual.
-            2. Kewargaan: Menjadi warga yang baik, disiplin, bertanggung jawab, menghargai aturan, dan bangga pada keberagaman Indonesia.
-            3. Penalaran Kritis: Mampu memproses informasi, menganalisis, mengevaluasi, dan menyimpulkan secara objektif.
-            4. Kreativitas: Menghasilkan gagasan atau karya asli dan inovatif.
-            5. Kolaborasi: Kemampuan bekerja sama dan berinteraksi secara positif dalam kelompok.
-            6. Kemandirian: Bertanggung jawab atas proses dan hasil belajarnya sendiri.
-            7. Kesehatan: Memiliki kesadaran dan sikap peduli dalam menjaga kesehatan fisik, mental diri, dan lingkungan.
-            8. Komunikasi: Kemampuan menyampaikan ide secara jelas, efektif, dan sopan.
+            1. Keimanan dan Ketakwaan Terhadap Tuhan Yang Maha Esa
+            2. Kewargaan
+            3. Penalaran Kritis
+            4. Kreativitas
+            5. Kolaborasi
+            6. Kemandirian
+            7. Kesehatan
+            8. Komunikasi
 
             --- FORMAT YANG WAJIB DITIRU ---
 
@@ -104,7 +105,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             * **Praktik Pedagogis:** [Sebutkan Model dan Metode yang digunakan]
             * **Kemitraan Pembelajaran:** [Sebutkan kemitraan Internal dan Eksternal]
             * **Lingkungan Pembelajaran:** [Jelaskan Budaya Belajar dan Ruang Fisik]
-            * **Pemanfaatan Digital:** [Sebutkan teknologi/alat bantu. WAJIB sertakan LINK pencarian YouTube, Google Images, dan Pinterest sesuai instruksi!]
+            * **Pemanfaatan Digital:** [WAJIB sertakan LINK YOUTUBE pencarian cerdas secara MENTAH DAN buatkan GAMBAR otomatis beserta link mentahnya sesuai aturan!]
 
             ## PENGALAMAN BELAJAR
             **AWAL (Bermakna, Menggembirakan)**
@@ -130,7 +131,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             
             isi_pesan.append(prompt)
             
-            with st.spinner('Tulung AI sedang merakit modul dan menyiapkan referensi link untuk Anda...'):
+            with st.spinner('Tulung AI sedang merakit modul, menyiapkan link mentah, dan melukis ilustrasi untuk Anda...'):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
