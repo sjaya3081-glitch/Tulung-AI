@@ -59,14 +59,14 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
 Tugasmu menyusun Modul Ajar untuk jenjang {jenjang} kelas {kelas} dengan mata pelajaran {mapel}.
 Tujuan pembelajaran: {tujuan}.
 
-ATURAN KHUSUS MEDIA (SANGAT PENTING - BACA DENGAN TELITI):
+ATURAN KHUSUS MEDIA:
 1. DILARANG KERAS memunculkan atau merender gambar secara langsung.
 2. Kamu HANYA BOLEH memberikan URL/Link mentahnya saja untuk referensi video dan gambar.
-3. Taruh link tersebut di dalam tanda kutip tunggal terbalik (backticks) agar sistem menguncinya sebagai teks murni yang bisa di-copy paste guru.
+3. Taruh link tersebut di dalam tanda kutip tunggal terbalik (backticks) agar sistem menguncinya sebagai teks murni yang bisa di-copy paste.
 4. Untuk gambar, berikan link pencarian cerdas ke Google Images dan Pinterest sesuai materi pembelajaran.
 
-ATURAN MUTLAK FORMAT (DILARANG MENGGUNAKAN SPASI DI AWAL BARIS UNTUK JUDUL):
-Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah struktur.
+ATURAN MUTLAK FORMAT:
+Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah struktur. Pada bagian PENGALAMAN BELAJAR, WAJIB gunakan format nomor (1, 2, 3) langkah demi langkah, DILARANG menulis paragraf panjang.
 
 DAFTAR 8 DIMENSI PROFIL LULUSAN:
 1. Keimanan dan Ketakwaan Terhadap Tuhan Yang Maha Esa: Memiliki landasan iman yang kuat, akhlak mulia, dan nilai spiritual.
@@ -108,16 +108,23 @@ DAFTAR 8 DIMENSI PROFIL LULUSAN:
 
 ## PENGALAMAN BELAJAR
 **AWAL (Bermakna, Menggembirakan)**
-* [Tuliskan aktivitas Orientasi, Apersepsi, dan Motivasi]
+1. **Orientasi:** [Tuliskan langkah-langkah guru membuka pelajaran]
+2. **Apersepsi:** [Tuliskan langkah guru mengaitkan materi dengan pengalaman siswa]
+3. **Motivasi:** [Tuliskan langkah guru memberikan semangat dan tujuan belajar]
 
 **INTI Memahami (Bermakna, Berkesadaran)**
-* [Tuliskan Penjelasan Terbimbing dan Aktivitas utama siswa]
+1. **Penjelasan Terbimbing:** [Tuliskan langkah guru menjelaskan konsep awal]
+2. **Aktivitas Siswa Langkah 1:** [Tuliskan apa yang dilakukan siswa secara spesifik]
+3. **Aktivitas Siswa Langkah 2:** [Tuliskan langkah lanjutan diskusi atau pengerjaan tugas]
 
 **Merefleksi (Bermakna dan berkesadaran)**
-* [Tuliskan aktivitas Presentasi/Tanggapan hasil belajar]
+1. **Presentasi:** [Tuliskan langkah siswa menyampaikan hasil kerjanya]
+2. **Tanggapan:** [Tuliskan langkah siswa lain/guru memberikan umpan balik]
 
 **PENUTUP (Bermakna, Berkesadaran)**
-* [Tuliskan Kesimpulan, Refleksi, dan Tindak Lanjut]
+1. **Kesimpulan:** [Tuliskan langkah menyimpulkan pembelajaran bersama]
+2. **Refleksi:** [Tuliskan langkah evaluasi perasaan/pemahaman siswa hari ini]
+3. **Tindak Lanjut:** [Tuliskan instruksi tugas atau persiapan materi berikutnya]
 
 ## ASESMEN PEMBELAJARAN
 * **Asesmen pada Awal Pembelajaran:** [Teknik dan Instrumen]
@@ -130,7 +137,7 @@ DAFTAR 8 DIMENSI PROFIL LULUSAN:
             
             isi_pesan.append(prompt)
             
-            with st.spinner('Tulung AI sedang merakit modul dan merapikan format untuk Anda...'):
+            with st.spinner('Tulung AI sedang merakit modul dan menyusun langkah demi langkah...'):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
