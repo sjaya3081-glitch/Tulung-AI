@@ -61,9 +61,10 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             Tujuan pembelajaran: {tujuan}.
             
             ATURAN KHUSUS MEDIA (SANGAT PENTING - BACA DENGAN TELITI):
-            1. DILARANG KERAS memunculkan atau merender gambar secara langsung (DILARANG menggunakan kode ![gambar](url)).
-            2. Kamu HANYA BOLEH memberikan URL/Link mentahnya saja untuk video dan gambar.
+            1. DILARANG KERAS memunculkan atau merender gambar secara langsung.
+            2. Kamu HANYA BOLEH memberikan URL/Link mentahnya saja untuk referensi video dan gambar.
             3. Taruh link tersebut di dalam tanda kutip tunggal terbalik (backticks) agar sistem menguncinya sebagai teks murni yang bisa di-copy paste guru.
+            4. Untuk gambar, berikan link pencarian cerdas ke Google Images dan Pinterest sesuai materi pembelajaran.
             
             ATURAN MUTLAK FORMAT:
             Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah struktur.
@@ -103,7 +104,8 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             * **Pemanfaatan Digital:** 
               - Alat bantu: [Sebutkan teknologi]
               - Link Referensi Video: `https://www.youtube.com/results?search_query=[ganti_dengan_kata_kunci_materi_spesifik]`
-              - Link Referensi Gambar: `https://image.pollinations.ai/prompt/[ganti_dengan_kata_kunci_spesifik_berbahasa_inggris_tanpa_teks_tambahan]?width=800&height=600&nologo=true`
+              - Link Referensi Gambar (Google): `https://www.google.com/search?tbm=isch&q=[ganti_dengan_kata_kunci_materi_spesifik]`
+              - Link Ide Visual (Pinterest): `https://id.pinterest.com/search/pins/?q=[ganti_dengan_kata_kunci_materi_spesifik]`
 
             ## PENGALAMAN BELAJAR
             **AWAL (Bermakna, Menggembirakan)**
@@ -129,7 +131,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             
             isi_pesan.append(prompt)
             
-            with st.spinner('Tulung AI sedang merakit modul dan menyiapkan link murni untuk Anda...'):
+            with st.spinner('Tulung AI sedang merakit modul dan menyiapkan link pencarian untuk Anda...'):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
