@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 import tempfile
 import os
-import markdown # Ini adalah mesin penerjemah ke Word
+import markdown
 
 # 1. Mengatur Wajah Website
 st.set_page_config(page_title="Tulung AI", page_icon="🤖")
@@ -26,8 +26,8 @@ with col1:
 with col2:
     kelas = st.selectbox("🏫 Kelas:", [str(i) for i in range(1, 13)])
 
-mapel = st.text_input("📚 Mata Pelajaran:", placeholder="Contoh: Pendidikan Pancasila")
-tujuan = st.text_area("🎯 Tujuan Pembelajaran:", placeholder="Contoh: Melalui kegiatan diskusi kelompok, peserta didik dapat mengidentifikasi penerapan nilai Pancasila.")
+mapel = st.text_input("📚 Mata Pelajaran:", placeholder="Contoh: IPAS")
+tujuan = st.text_area("🎯 Tujuan Pembelajaran:", placeholder="Contoh: Peserta didik dapat menganalisis struktur dan fungsi organ tubuh manusia.")
 
 # 4. Tombol Utama & Logika Berpikir AI
 st.markdown("──────────────────────────────")
@@ -63,8 +63,9 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             ATURAN KHUSUS KOSP & MEDIA:
             1. KONTEKS KOSP: Jika ada dokumen KOSP yang dilampirkan, pelajari visi, misi, dan karakteristik sekolah tersebut. Jadikan informasi dari KOSP sebagai dasar penentuan 'Kemitraan Pembelajaran', 'Lingkungan Pembelajaran', dan rancang 'Pengalaman Belajar' agar modul ini sangat kontekstual dengan sekolah tersebut.
             2. MEDIA VIDEO: Pada bagian Pemanfaatan Digital, jika kamu merekomendasikan video, WAJIB sertakan link pencarian cerdas YouTube dengan format: [Tonton Referensi Video di YouTube](https://www.youtube.com/results?search_query=kata+kunci+materi+spesifik)
-            3. MEDIA GAMBAR/POSTER: Pada bagian Pemanfaatan Digital, jika kamu merekomendasikan media gambar/poster visual, kamu WAJIB membuatkan gambarnya secara langsung menggunakan format teks Markdown berikut ini: 
-               ![Deskripsi Gambar](https://image.pollinations.ai/prompt/deskripsi+gambar+dalam+bahasa+inggris+yang+sangat+detail+pisahkan+kata+dengan+tanda+plus?width=800&height=600&nologo=true)
+            3. MEDIA GAMBAR/POSTER: Pada bagian Pemanfaatan Digital, buatkan gambar otomatis menggunakan layanan Pollinations. Agar gambarnya pantas untuk buku pelajaran dan tidak abstrak/menyeramkan, kamu WAJIB menggunakan bahasa Inggris untuk URL-nya dan tambahkan kata kunci gaya desain edukasi. Gunakan format persis seperti ini:
+               ![Deskripsi Gambar](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+[TOPIK+SPESIFIK]+clear+vector+flat+design+for+kids+textbook?width=800&height=600&nologo=true)
+               Contoh: ![Sistem Pencernaan](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+anatomy+clear+vector+flat+design+for+kids+textbook?width=800&height=600&nologo=true)
             
             ATURAN MUTLAK FORMAT:
             Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah judul bagian. Gunakan Markdown agar rapi (termasuk tabel untuk rubrik).
@@ -132,10 +133,8 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
-                # Menampilkan modul di layar (Pasti Rapi)
                 st.markdown(response.text)
                 
-                # FITUR BARU: Menerjemahkan ke format MS Word (.doc)
                 html_text = markdown.markdown(response.text, extensions=['tables'])
                 word_file = f"<html><head><meta charset='utf-8'></head><body>{html_text}</body></html>"
                 
