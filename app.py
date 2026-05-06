@@ -55,89 +55,91 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
                     finally:
                         os.remove(tmp_path)
             
-            prompt = f"""Kamu adalah Pakar Perancang Pembelajaran Mendalam tingkat nasional. 
-Tugasmu menyusun Modul Ajar untuk jenjang {jenjang} kelas {kelas} dengan mata pelajaran {mapel}.
-Tujuan pembelajaran: {tujuan}.
+            prompt = f"""
+            Kamu adalah Pakar Perancang Pembelajaran Mendalam tingkat nasional. 
+            Tugasmu menyusun Modul Ajar untuk jenjang {jenjang} kelas {kelas} dengan mata pelajaran {mapel}.
+            Tujuan pembelajaran: {tujuan}.
+            
+            ATURAN KHUSUS KOSP & MEDIA (SANGAT PENTING):
+            1. KONTEKS KOSP: Jika ada dokumen KOSP yang dilampirkan, pelajari visi, misi, dan karakteristik sekolah tersebut. Jadikan informasi dari KOSP sebagai dasar penentuan 'Kemitraan Pembelajaran', 'Lingkungan Pembelajaran', dan rancang 'Pengalaman Belajar' agar modul ini sangat kontekstual dengan sekolah tersebut.
+            2. MEDIA VIDEO: JANGAN menyembunyikan link di balik teks (jangan gunakan format [Teks](URL)). Tuliskan URL mentahnya secara langsung agar bisa di-copy paste guru. 
+               Format wajib: https://www.youtube.com/results?search_query=kata+kunci+materi+spesifik
+            3. MEDIA GAMBAR/POSTER: Buatkan ilustrasi pendidikan otomatis yang bersih TANPA TEKS. Tampilkan gambarnya, DAN sertakan juga URL mentahnya di bawahnya agar guru bisa mengunduhnya secara terpisah.
+               Contoh penulisan yang wajib diikuti:
+               ![Ilustrasi](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+without+any+text+or+labels+clear+vector+flat+design?width=800&height=600&nologo=true)
+               Link Gambar: https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+without+any+text+or+labels+clear+vector+flat+design?width=800&height=600&nologo=true
+            
+            ATURAN MUTLAK FORMAT:
+            Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah judul bagian. Gunakan Markdown agar rapi (termasuk tabel untuk rubrik).
+            Pilih dan tebalkan (bold) 8 Dimensi Profil Lulusan yang paling relevan pada bagian 'IDENTIFIKASI'.
 
-ATURAN KHUSUS MEDIA:
-1. DILARANG KERAS memunculkan atau merender gambar secara langsung.
-2. Kamu HANYA BOLEH memberikan URL/Link mentahnya saja untuk referensi video dan gambar.
-3. Taruh link tersebut di dalam tanda kutip tunggal terbalik (backticks) agar sistem menguncinya sebagai teks murni yang bisa di-copy paste.
-4. Untuk gambar, berikan link pencarian cerdas ke Google Images dan Pinterest sesuai materi pembelajaran.
+            DAFTAR 8 DIMENSI PROFIL LULUSAN:
+            1. Keimanan dan Ketakwaan Terhadap Tuhan Yang Maha Esa
+            2. Kewargaan
+            3. Penalaran Kritis
+            4. Kreativitas
+            5. Kolaborasi
+            6. Kemandirian
+            7. Kesehatan
+            8. Komunikasi
 
-ATURAN MUTLAK FORMAT:
-Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah struktur. Pada bagian PENGALAMAN BELAJAR, WAJIB gunakan format nomor (1, 2, 3) langkah demi langkah, DILARANG menulis paragraf panjang.
+            --- FORMAT YANG WAJIB DITIRU ---
 
-DAFTAR 8 DIMENSI PROFIL LULUSAN:
-1. Keimanan dan Ketakwaan Terhadap Tuhan Yang Maha Esa: Memiliki landasan iman yang kuat, akhlak mulia, dan nilai spiritual.
-2. Kewargaan: Menjadi warga yang baik, disiplin, bertanggung jawab, menghargai aturan, dan bangga pada keberagaman Indonesia.
-3. Penalaran Kritis: Mampu memproses informasi, menganalisis, mengevaluasi, dan menyimpulkan secara objektif.
-4. Kreativitas: Menghasilkan gagasan atau karya asli dan inovatif.
-5. Kolaborasi: Kemampuan bekerja sama dan berinteraksi secara positif dalam kelompok.
-6. Kemandirian: Bertanggung jawab atas proses dan hasil belajarnya sendiri.
-7. Kesehatan: Memiliki kesadaran dan sikap peduli dalam menjaga kesehatan fisik, mental diri, dan lingkungan.
-8. Komunikasi: Kemampuan menyampaikan ide secara jelas, efektif, dan sopan.
+            # PERENCANAAN PEMBELAJARAN MENDALAM
+            **SEKOLAH** : [Isi otomatis berdasarkan nama sekolah di KOSP jika ada, jika tidak kosongkan]
+            **NAMA GURU** : [Kosongkan]
+            **MATA PELAJARAN** : {mapel}
+            **KELAS / SEMESTER** : {kelas} / [Isi Semester yang logis]
+            **ALOKASI WAKTU** : [Isi waktu yang logis]
 
---- FORMAT YANG WAJIB DITIRU ---
+            ## IDENTIFIKASI
+            * **Peserta Didik:** [Buat analisis ringkas tahap perkembangan siswa kelas {kelas}]
+            * **Materi Pelajaran:** [Buat fokus materi pelajaran]
+            * **Dimensi Profil Lulusan (DPL):** [Tuliskan dan tebalkan 2-4 DPL yang dipilih dari daftar di atas]
 
-# PERENCANAAN PEMBELAJARAN MENDALAM
-**SEKOLAH** : [Isi dari KOSP atau kosongkan]
-**NAMA GURU** : [Kosongkan]
-**MATA PELAJARAN** : {mapel}
-**KELAS / SEMESTER** : {kelas} / [Isi Semester]
-**ALOKASI WAKTU** : [Isi waktu]
+            ## DESAIN PEMBELAJARAN
+            * **Capaian Pembelajaran:** [Buat capaian yang sesuai materi]
+            * **Lintas Disiplin Ilmu:** [Sebutkan 1 atau 2 mapel lain yang terkait dan alasannya]
+            * **Tujuan Pembelajaran:** {tujuan}
+            * **Topik Pembelajaran:** [Topik utama]
+            * **Praktik Pedagogis:** [Sebutkan Model dan Metode yang digunakan]
+            * **Kemitraan Pembelajaran:** [Sebutkan kemitraan Internal dan Eksternal]
+            * **Lingkungan Pembelajaran:** [Jelaskan Budaya Belajar dan Ruang Fisik]
+            * **Pemanfaatan Digital:** [WAJIB sertakan LINK YOUTUBE pencarian cerdas secara MENTAH DAN buatkan GAMBAR otomatis beserta link mentahnya sesuai aturan!]
 
-## IDENTIFIKASI
-* **Peserta Didik:** [Analisis ringkas]
-* **Materi Pelajaran:** [Fokus materi]
-* **Dimensi Profil Lulusan (DPL):** [Tuliskan dan tebalkan 2-4 DPL yang dipilih]
+            ## PENGALAMAN BELAJAR
 
-## DESAIN PEMBELAJARAN
-* **Capaian Pembelajaran:** [Capaian]
-* **Lintas Disiplin Ilmu:** [1 atau 2 mapel lain]
-* **Tujuan Pembelajaran:** {tujuan}
-* **Topik Pembelajaran:** [Topik utama]
-* **Praktik Pedagogis:** [Model dan Metode]
-* **Kemitraan Pembelajaran:** [Internal dan Eksternal]
-* **Lingkungan Pembelajaran:** [Budaya dan Ruang]
-* **Pemanfaatan Digital:** 
-  - Alat bantu: [Sebutkan teknologi]
-  - Link Referensi Video: `https://www.youtube.com/results?search_query=[ganti_dengan_kata_kunci_materi_spesifik]`
-  - Link Referensi Gambar (Google): `https://www.google.com/search?tbm=isch&q=[ganti_dengan_kata_kunci_materi_spesifik]`
-  - Link Ide Visual (Pinterest): `https://id.pinterest.com/search/pins/?q=[ganti_dengan_kata_kunci_materi_spesifik]`
+            **AWAL (Bermakna, Menggembirakan)**
+            1. **Orientasi:** [Tuliskan aktivitas salam, doa, presensi, dll]
+            2. **Apersepsi:** [Tuliskan pertanyaan pemantik terkait materi]
+            3. **Motivasi:** [Tuliskan aktivitas pemberian motivasi, misal tayangan video singkat]
 
-## PENGALAMAN BELAJAR
-**AWAL (Bermakna, Menggembirakan)**
-1. **Orientasi:** [Tuliskan langkah-langkah guru membuka pelajaran]
-2. **Apersepsi:** [Tuliskan langkah guru mengaitkan materi dengan pengalaman siswa]
-3. **Motivasi:** [Tuliskan langkah guru memberikan semangat dan tujuan belajar]
+            **INTI Memahami (Bermakna, Berkesadaran)**
+            1. **Penjelasan Terbimbing:** [Tuliskan aktivitas penjelasan dari guru menggunakan media interaktif]
+            2. **[Tuliskan Nama Aktivitas Inti 1, misal Diskusi Kelompok]:** [Deskripsi aktivitas]
+            3. **[Tuliskan Nama Aktivitas Inti 2]:** [Deskripsi aktivitas]
 
-**INTI Memahami (Bermakna, Berkesadaran)**
-1. **Penjelasan Terbimbing:** [Tuliskan langkah guru menjelaskan konsep awal]
-2. **Aktivitas Siswa Langkah 1:** [Tuliskan apa yang dilakukan siswa secara spesifik]
-3. **Aktivitas Siswa Langkah 2:** [Tuliskan langkah lanjutan diskusi atau pengerjaan tugas]
+            **Merefleksi (Bermakna dan berkesadaran)**
+            1. **Presentasi Hasil:** [Tuliskan aktivitas siswa mempresentasikan hasil]
+            2. **Umpan Balik:** [Tuliskan aktivitas tanggapan dari guru atau siswa lain]
 
-**Merefleksi (Bermakna dan berkesadaran)**
-1. **Presentasi:** [Tuliskan langkah siswa menyampaikan hasil kerjanya]
-2. **Tanggapan:** [Tuliskan langkah siswa lain/guru memberikan umpan balik]
+            **PENUTUP (Bermakna, Berkesadaran)**
+            1. **Kesimpulan:** [Tuliskan aktivitas menyimpulkan pelajaran bersama-sama]
+            2. **Refleksi:** [Tuliskan pertanyaan refleksi untuk siswa]
+            3. **Tindak Lanjut:** [Tuliskan penugasan atau arahan untuk pertemuan berikutnya]
 
-**PENUTUP (Bermakna, Berkesadaran)**
-1. **Kesimpulan:** [Tuliskan langkah menyimpulkan pembelajaran bersama]
-2. **Refleksi:** [Tuliskan langkah evaluasi perasaan/pemahaman siswa hari ini]
-3. **Tindak Lanjut:** [Tuliskan instruksi tugas atau persiapan materi berikutnya]
+            ## ASESMEN PEMBELAJARAN
+            * **Asesmen pada Awal Pembelajaran:** [Teknik dan Instrumen]
+            * **Asesmen pada Proses Pembelajaran:** [Teknik dan Instrumen]
+            * **Asesmen pada Akhir Pembelajaran:** [Teknik dan Instrumen]
 
-## ASESMEN PEMBELAJARAN
-* **Asesmen pada Awal Pembelajaran:** [Teknik dan Instrumen]
-* **Asesmen pada Proses Pembelajaran:** [Teknik dan Instrumen]
-* **Asesmen pada Akhir Pembelajaran:** [Teknik dan Instrumen]
-
-## RUBRIK PENILAIAN
-[Buat tabel Rubrik Penilaian dengan kolom: Indikator, Baru Memulai, Berkembang, Cakap, Mahir]
-"""
+            ## RUBRIK PENILAIAN
+            [Buat tabel Rubrik Penilaian dengan kolom: Indikator, Baru Memulai, Berkembang, Cakap, Mahir]
+            """
             
             isi_pesan.append(prompt)
             
-            with st.spinner('Tulung AI sedang merakit modul dan menyusun langkah demi langkah...'):
+            with st.spinner('Tulung AI sedang merakit modul, menyiapkan link mentah, dan melukis ilustrasi untuk Anda...'):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
