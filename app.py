@@ -60,72 +60,68 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             Tugasmu menyusun Modul Ajar untuk jenjang {jenjang} kelas {kelas} dengan mata pelajaran {mapel}.
             Tujuan pembelajaran: {tujuan}.
             
-            LARANGAN KERAS TERKAIT MEDIA:
-            1. Kamu DILARANG KERAS menampilkan gambar secara otomatis. 
-            2. Kamu DILARANG KERAS menggunakan sintaks markdown gambar seperti `![teks](link)` sama sekali di seluruh modul ini!
-            
-            ATURAN MEDIA (WAJIB DIIKUTI):
-            1. MEDIA VIDEO: Tampilkan langsung link URL pencarian YouTube secara mentah. Contoh: https://www.youtube.com/results?search_query=materi+pembelajaran
-            2. MEDIA GAMBAR: Cukup berikan rekomendasi teks dan sertakan link pencarian ke Google Images dan Pinterest secara mentah (raw link).
-               Contoh format penyajiannya:
-               - Rekomendasi Visual: Poster anatomi sistem pencernaan manusia.
-               - Cari Gambar di Google: https://www.google.com/search?tbm=isch&q=poster+anatomi+sistem+pencernaan+manusia
-               - Cari Gambar di Pinterest: https://id.pinterest.com/search/pins/?q=poster+anatomi+sistem+pencernaan+manusia
+            ATURAN KHUSUS KOSP & MEDIA:
+            1. KONTEKS KOSP: Jika ada dokumen KOSP yang dilampirkan, pelajari visi, misi, dan karakteristik sekolah tersebut. Jadikan informasi dari KOSP sebagai dasar penentuan 'Kemitraan Pembelajaran', 'Lingkungan Pembelajaran', dan rancang 'Pengalaman Belajar' agar modul ini sangat kontekstual dengan sekolah tersebut.
+            2. MEDIA VIDEO: Pada bagian Pemanfaatan Digital, jika kamu merekomendasikan video, WAJIB sertakan link pencarian cerdas YouTube dengan format: [Tonton Referensi Video di YouTube](https://www.youtube.com/results?search_query=kata+kunci+materi+spesifik)
+            3. MEDIA GAMBAR/POSTER: Pada bagian Pemanfaatan Digital, buatkan gambar otomatis menggunakan layanan Pollinations. Karena AI sering mengacaukan teks, kamu WAJIB memerintahkan AI untuk TIDAK memasukkan teks/huruf/label apapun ke dalam gambar agar ilustrasinya bersih. Gunakan format persis seperti ini:
+               ![Deskripsi Gambar](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+[TOPIK+SPESIFIK]+without+any+text+or+labels+clear+vector+flat+design+for+kids?width=800&height=600&nologo=true)
+               Contoh: ![Sistem Pencernaan Bersih](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+anatomy+without+any+text+or+labels+clear+vector+flat+design+for+kids?width=800&height=600&nologo=true)
             
             ATURAN MUTLAK FORMAT:
-            Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah judul bagian. Gunakan Markdown agar rapi.
+            Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah judul bagian. Gunakan Markdown agar rapi (termasuk tabel untuk rubrik).
+            Pilih dan tebalkan (bold) 8 Dimensi Profil Lulusan yang paling relevan pada bagian 'IDENTIFIKASI'.
 
-            DAFTAR 8 DIMENSI PROFIL LULUSAN (Pilih 2-4 yang relevan dan TEBALKAN di bagian Identifikasi):
-            1. Keimanan dan Ketakwaan Terhadap Tuhan Yang Maha Esa
-            2. Kewargaan
-            3. Penalaran Kritis
-            4. Kreativitas
-            5. Kolaborasi
-            6. Kemandirian
-            7. Kesehatan
-            8. Komunikasi
+            DAFTAR 8 DIMENSI PROFIL LULUSAN:
+            1. Keimanan dan Ketakwaan Terhadap Tuhan Yang Maha Esa: Memiliki landasan iman yang kuat, akhlak mulia, dan nilai spiritual.
+            2. Kewargaan: Menjadi warga yang baik, disiplin, bertanggung jawab, menghargai aturan, dan bangga pada keberagaman Indonesia.
+            3. Penalaran Kritis: Mampu memproses informasi, menganalisis, mengevaluasi, dan menyimpulkan secara objektif.
+            4. Kreativitas: Menghasilkan gagasan atau karya asli dan inovatif.
+            5. Kolaborasi: Kemampuan bekerja sama dan berinteraksi secara positif dalam kelompok.
+            6. Kemandirian: Bertanggung jawab atas proses dan hasil belajarnya sendiri.
+            7. Kesehatan: Memiliki kesadaran dan sikap peduli dalam menjaga kesehatan fisik, mental diri, dan lingkungan.
+            8. Komunikasi: Kemampuan menyampaikan ide secara jelas, efektif, dan sopan.
 
             --- FORMAT YANG WAJIB DITIRU ---
 
             # PERENCANAAN PEMBELAJARAN MENDALAM
-            **SEKOLAH** : [Isi otomatis jika ada KOSP, jika tidak kosongkan]
+            **SEKOLAH** : [Isi otomatis berdasarkan nama sekolah di KOSP jika ada, jika tidak kosongkan]
             **NAMA GURU** : [Kosongkan]
             **MATA PELAJARAN** : {mapel}
-            **KELAS / SEMESTER** : {kelas} / [Isi Semester]
-            **ALOKASI WAKTU** : [Isi waktu]
+            **KELAS / SEMESTER** : {kelas} / [Isi Semester yang logis]
+            **ALOKASI WAKTU** : [Isi waktu yang logis]
 
             ## IDENTIFIKASI
-            * **Peserta Didik:** [Buat analisis ringkas kelas {kelas}]
-            * **Materi Pelajaran:** [Fokus materi]
-            * **Dimensi Profil Lulusan (DPL):** [Tuliskan dan tebalkan DPL yang dipilih]
+            * **Peserta Didik:** [Buat analisis ringkas tahap perkembangan siswa kelas {kelas}]
+            * **Materi Pelajaran:** [Buat fokus materi pelajaran]
+            * **Dimensi Profil Lulusan (DPL):** [Tuliskan dan tebalkan 2-4 DPL yang dipilih dari daftar di atas]
 
             ## DESAIN PEMBELAJARAN
-            * **Capaian Pembelajaran:** [Capaian sesuai materi]
-            * **Lintas Disiplin Ilmu:** [Sebutkan 1-2 mapel terkait]
+            * **Capaian Pembelajaran:** [Buat capaian yang sesuai materi]
+            * **Lintas Disiplin Ilmu:** [Sebutkan 1 atau 2 mapel lain yang terkait dan alasannya]
             * **Tujuan Pembelajaran:** {tujuan}
             * **Topik Pembelajaran:** [Topik utama]
-            * **Praktik Pedagogis:** [Model dan Metode]
-            * **Kemitraan Pembelajaran:** [Internal dan Eksternal]
-            * **Lingkungan Pembelajaran:** [Budaya dan Ruang Fisik]
-            * **Pemanfaatan Digital:** [Sebutkan alat bantu. WAJIB tampilkan TAUTAN MENTAH YouTube, Google Images, dan Pinterest sesuai aturan!]
+            * **Praktik Pedagogis:** [Sebutkan Model dan Metode yang digunakan]
+            * **Kemitraan Pembelajaran:** [Sebutkan kemitraan Internal dan Eksternal]
+            * **Lingkungan Pembelajaran:** [Jelaskan Budaya Belajar dan Ruang Fisik]
+            * **Pemanfaatan Digital:** [Sebutkan teknologi/alat bantu. WAJIB sertakan LINK YOUTUBE pencarian cerdas DAN buatkan GAMBAR otomatis menggunakan link pollinations.ai yang bersih TANPA TEKS sesuai aturan!]
 
             ## PENGALAMAN BELAJAR
             **AWAL (Bermakna, Menggembirakan)**
-            * [Aktivitas Orientasi, Apersepsi, Motivasi]
+            * [Tuliskan aktivitas Orientasi, Apersepsi, dan Motivasi]
 
             **INTI Memahami (Bermakna, Berkesadaran)**
-            * [Penjelasan Terbimbing dan Aktivitas utama]
+            * [Tuliskan Penjelasan Terbimbing dan Aktivitas utama siswa]
 
             **Merefleksi (Bermakna dan berkesadaran)**
-            * [Aktivitas Presentasi/Tanggapan]
+            * [Tuliskan aktivitas Presentasi/Tanggapan hasil belajar]
 
             **PENUTUP (Bermakna, Berkesadaran)**
-            * [Kesimpulan, Refleksi, Tindak Lanjut]
+            * [Tuliskan Kesimpulan, Refleksi, dan Tindak Lanjut]
 
             ## ASESMEN PEMBELAJARAN
-            * **Asesmen pada Awal Pembelajaran:** [Teknik/Instrumen]
-            * **Asesmen pada Proses Pembelajaran:** [Teknik/Instrumen]
-            * **Asesmen pada Akhir Pembelajaran:** [Teknik/Instrumen]
+            * **Asesmen pada Awal Pembelajaran:** [Teknik dan Instrumen]
+            * **Asesmen pada Proses Pembelajaran:** [Teknik dan Instrumen]
+            * **Asesmen pada Akhir Pembelajaran:** [Teknik dan Instrumen]
 
             ## RUBRIK PENILAIAN
             [Buat tabel Rubrik Penilaian dengan kolom: Indikator, Baru Memulai, Berkembang, Cakap, Mahir]
@@ -133,7 +129,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             
             isi_pesan.append(prompt)
             
-            with st.spinner('Tulung AI sedang merakit modul dan menyiapkan link referensi media untuk Anda...'):
+            with st.spinner('Tulung AI sedang merakit modul, merekomendasikan video, dan melukis ilustrasi untuk Anda...'):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
