@@ -63,9 +63,9 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             ATURAN KHUSUS KOSP & MEDIA:
             1. KONTEKS KOSP: Jika ada dokumen KOSP yang dilampirkan, pelajari visi, misi, dan karakteristik sekolah tersebut. Jadikan informasi dari KOSP sebagai dasar penentuan 'Kemitraan Pembelajaran', 'Lingkungan Pembelajaran', dan rancang 'Pengalaman Belajar' agar modul ini sangat kontekstual dengan sekolah tersebut.
             2. MEDIA VIDEO: Pada bagian Pemanfaatan Digital, jika kamu merekomendasikan video, WAJIB sertakan link pencarian cerdas YouTube dengan format: [Tonton Referensi Video di YouTube](https://www.youtube.com/results?search_query=kata+kunci+materi+spesifik)
-            3. MEDIA GAMBAR/POSTER: Pada bagian Pemanfaatan Digital, buatkan gambar otomatis menggunakan layanan Pollinations. Agar gambarnya pantas untuk buku pelajaran dan tidak abstrak/menyeramkan, kamu WAJIB menggunakan bahasa Inggris untuk URL-nya dan tambahkan kata kunci gaya desain edukasi. Gunakan format persis seperti ini:
-               ![Deskripsi Gambar](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+[TOPIK+SPESIFIK]+clear+vector+flat+design+for+kids+textbook?width=800&height=600&nologo=true)
-               Contoh: ![Sistem Pencernaan](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+anatomy+clear+vector+flat+design+for+kids+textbook?width=800&height=600&nologo=true)
+            3. MEDIA GAMBAR/POSTER: Pada bagian Pemanfaatan Digital, buatkan gambar otomatis menggunakan layanan Pollinations. Karena AI sering mengacaukan teks, kamu WAJIB memerintahkan AI untuk TIDAK memasukkan teks/huruf/label apapun ke dalam gambar agar ilustrasinya bersih. Gunakan format persis seperti ini:
+               ![Deskripsi Gambar](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+[TOPIK+SPESIFIK]+without+any+text+or+labels+clear+vector+flat+design+for+kids?width=800&height=600&nologo=true)
+               Contoh: ![Sistem Pencernaan Bersih](https://image.pollinations.ai/prompt/high+quality+educational+illustration+of+human+digestive+system+anatomy+without+any+text+or+labels+clear+vector+flat+design+for+kids?width=800&height=600&nologo=true)
             
             ATURAN MUTLAK FORMAT:
             Kamu WAJIB mengeluarkan output menggunakan format persis seperti template di bawah ini. Jangan mengubah judul bagian. Gunakan Markdown agar rapi (termasuk tabel untuk rubrik).
@@ -103,7 +103,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             * **Praktik Pedagogis:** [Sebutkan Model dan Metode yang digunakan]
             * **Kemitraan Pembelajaran:** [Sebutkan kemitraan Internal dan Eksternal]
             * **Lingkungan Pembelajaran:** [Jelaskan Budaya Belajar dan Ruang Fisik]
-            * **Pemanfaatan Digital:** [Sebutkan teknologi/alat bantu. WAJIB sertakan LINK YOUTUBE pencarian cerdas DAN buatkan GAMBAR/POSTER otomatis menggunakan link pollinations.ai sesuai aturan!]
+            * **Pemanfaatan Digital:** [Sebutkan teknologi/alat bantu. WAJIB sertakan LINK YOUTUBE pencarian cerdas DAN buatkan GAMBAR otomatis menggunakan link pollinations.ai yang bersih TANPA TEKS sesuai aturan!]
 
             ## PENGALAMAN BELAJAR
             **AWAL (Bermakna, Menggembirakan)**
@@ -129,7 +129,7 @@ if st.button("🚀 MINTA TULUNG AI BUATKAN SEKARANG"):
             
             isi_pesan.append(prompt)
             
-            with st.spinner('Tulung AI sedang merakit modul, merekomendasikan video, dan melukis poster untuk Anda...'):
+            with st.spinner('Tulung AI sedang merakit modul, merekomendasikan video, dan melukis ilustrasi untuk Anda...'):
                 response = model.generate_content(isi_pesan)
                 st.success("✅ Modul Ajar Profesional Berhasil Diciptakan!")
                 
